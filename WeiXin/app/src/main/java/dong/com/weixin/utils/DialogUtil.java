@@ -26,7 +26,7 @@ public class DialogUtil {
     }
 
     public void ShowDialog(Context context){
-        AlertDialog dialog = null;
+        /*AlertDialog dialog = null;
         AlertDialog.Builder builder=null;
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_list,null);
         listview  = (ListView) view.findViewById(R.id.listview);
@@ -40,8 +40,10 @@ public class DialogUtil {
         WindowManager.LayoutParams lp = window.getAttributes();
         // 设置透明度为0.3
         //lp.alpha = 0.0f;
-        window.setAttributes(lp);
-
+        window.setAttributes(lp);*/
+        Dialog dialog = new Dialog(context,R.style.dialog);
+        dialog.setContentView(R.layout.dialog_list);
+        dialog.setCancelable(true);
         dialog.show();
 
     }
