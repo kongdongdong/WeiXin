@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import dong.com.weixin.R;
 import dong.com.weixin.adapter.ViewPgaerAdapter;
 import dong.com.weixin.fragment.ContantFragment;
@@ -23,41 +25,46 @@ import dong.com.weixin.ui.BladeView;
 import dong.com.weixin.ui.ChangeColorIconWithText;
 import dong.com.weixin.ui.PopMenu;
 import dong.com.weixin.ui.TitlePopup;
+import roboguice.inject.InjectView;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener, ViewPager.OnPageChangeListener {
 
+    @InjectView(R.id.add)
     private ImageView add;
+
+    @InjectView(R.id.viewpager)
+    private ViewPager viewpager;
+
+    @Inject
+    private Context mContext;
 
     private TitlePopup titlePopup;
     private PopMenu popMenu;
-    private ViewPager viewpager;
     private BladeView bladeView;
     private List<Fragment> listFragment;
     private List<ChangeColorIconWithText> mTabIndicators = new ArrayList<ChangeColorIconWithText>();
-    private Context mContext;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mContext = this;
+
         initView();
         initListener();
         initPopUp();
         initPopUpTwo();
+
     }
 
 
 
     private void initView() {
-        add = (ImageView) findViewById(R.id.add);
-
         listFragment = new ArrayList<Fragment>();
         listFragment.add(new XinFragment());
         listFragment.add(new ContantFragment());
         listFragment.add(new FindFragment());
         listFragment.add(new MineFragment());
 
-        viewpager = (ViewPager)findViewById(R.id.viewpager);
         viewpager.setAdapter(new ViewPgaerAdapter(getSupportFragmentManager(), listFragment));
 
         ChangeColorIconWithText one = (ChangeColorIconWithText) findViewById(R.id.id_indicator_one);

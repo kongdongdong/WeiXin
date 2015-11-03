@@ -17,13 +17,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import dong.com.weixin.R;
+import roboguice.inject.InjectView;
 
-public class LoginActivity extends Activity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
-    private EditText et_phone,et_pwd;
-    private Button bt_login;
-    private ImageView im_delete,im_delete_pwd;
-    private TextView tv_title;
+    @InjectView(R.id.et_phone) private EditText et_phone;
+    @InjectView(R.id.et_pwd) private EditText et_pwd;
+    @InjectView(R.id.bt_login) private Button bt_login;
+    @InjectView(R.id.im_delete) private ImageView im_delete;
+    @InjectView(R.id.im_delete_pwd) private ImageView im_delete_pwd;
+    @InjectView(R.id.tv_title) private TextView tv_title;
+
     private String phone,pwd;
     int length;
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +37,6 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     }
 
     private void initView() {
-        et_phone = (EditText) findViewById(R.id.et_phone);
-        et_pwd = (EditText) findViewById(R.id.et_pwd);
-        bt_login = (Button) findViewById(R.id.bt_login);
-        im_delete = (ImageView) findViewById(R.id.im_delete);
-        im_delete_pwd = (ImageView) findViewById(R.id.im_delete_pwd);
-        tv_title = (TextView) findViewById(R.id.tv_title);
 
         tv_title.setText(R.string.login_type_phone);
         phone = et_phone.getText().toString();

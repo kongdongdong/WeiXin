@@ -7,10 +7,11 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import dong.com.weixin.R;
+import roboguice.inject.InjectView;
 
 public class RegistActivity extends Activity {
 
-    private TextView tv_title;
+    @InjectView(R.id.tv_title) private TextView tv_title;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regist);
@@ -18,7 +19,7 @@ public class RegistActivity extends Activity {
     }
 
     private void initView() {
-        tv_title = (TextView) findViewById(R.id.tv_title);
+
 
         tv_title.setText(R.string.regist_type_phone);
     }

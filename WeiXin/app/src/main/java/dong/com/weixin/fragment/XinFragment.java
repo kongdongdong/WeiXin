@@ -11,14 +11,18 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import javax.inject.Inject;
+
 import dong.com.weixin.R;
 import dong.com.weixin.adapter.ConversitionAdapter;
 import dong.com.weixin.utils.DialogUtil;
 import dong.com.weixin.utils.LogUtils;
+import roboguice.fragment.RoboFragment;
+import roboguice.inject.InjectView;
 
-public class XinFragment extends Fragment {
+public class XinFragment extends RoboFragment {
 
-    private ListView conversition_listview;
+    @InjectView(R.id.conversition_listview) private ListView conversition_listview;
     private ConversitionAdapter adapter;
     private Context mContext;
     private DialogUtil dialog;
@@ -36,7 +40,7 @@ public class XinFragment extends Fragment {
     }
 
     private void initView() {
-        conversition_listview = (ListView) getActivity().findViewById(R.id.conversition_listview);
+
         adapter = new ConversitionAdapter(mContext);
         conversition_listview.setAdapter(adapter);
         dialog = new DialogUtil(strs,mContext);

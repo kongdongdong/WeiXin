@@ -16,22 +16,27 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.inject.Inject;
+
 import dong.com.weixin.R;
 import dong.com.weixin.adapter.ContantAdapter;
 import dong.com.weixin.bean.Contant;
 import dong.com.weixin.ui.BladeView;
 import dong.com.weixin.utils.ContantsUtil;
 import dong.com.weixin.utils.DialogUtil;
+import roboguice.fragment.RoboFragment;
+import roboguice.inject.InjectView;
 
-public class ContantFragment extends Fragment {
+public class ContantFragment extends RoboFragment {
 
-    private ListView listview;
-    private Context mContext;
-    private ContantAdapter adapter;
-    private TextView indicator;
+    @InjectView(R.id.cn_listview) private ListView listview;
+    @InjectView(R.id.bladeView) private BladeView bladeView;
+    @Inject private Context mContext;
+
     private ImageView icon;
     private TextView name;
-    private BladeView bladeView;
+    private TextView indicator;
+    private ContantAdapter adapter;
     private DialogUtil dialog;
     private List<Contant> contants;
     private String[] strs = {"设置备注及标签"};
@@ -58,8 +63,7 @@ public class ContantFragment extends Fragment {
         contants = ContantsUtil.getContants();
 
         adapter = new ContantAdapter(mContext,contants);
-        bladeView = (BladeView) getActivity().findViewById(R.id.bladeView);
-        listview = (ListView) getActivity().findViewById(R.id.cn_listview);
+
         AddHanders();
         listview.setAdapter(adapter);
 
@@ -89,7 +93,9 @@ public class ContantFragment extends Fragment {
         listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                dialog.ShowDialog();
+                if(i >3){
+                    dialog.ShowDialog();
+                }
                 return false;
             }
         });

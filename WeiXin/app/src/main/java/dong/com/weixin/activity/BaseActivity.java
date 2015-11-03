@@ -7,10 +7,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import dong.com.weixin.R;
+import roboguice.activity.RoboFragmentActivity;
+import roboguice.inject.InjectView;
 
-public class BaseActivity extends FragmentActivity {
+public class BaseActivity extends RoboFragmentActivity {
 
-    @Override
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
