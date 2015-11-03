@@ -5,7 +5,7 @@
     <TextView
         android:id="@+id/textview"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:padding="10dp"
         android:text="你好你好"
         android:layout_width="wrap_content"

@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ import dong.com.weixin.adapter.ContantAdapter;
 import dong.com.weixin.bean.Contant;
 import dong.com.weixin.ui.BladeView;
 import dong.com.weixin.utils.ContantsUtil;
+import dong.com.weixin.utils.DialogUtil;
 
 public class ContantFragment extends Fragment {
 
@@ -30,7 +32,9 @@ public class ContantFragment extends Fragment {
     private ImageView icon;
     private TextView name;
     private BladeView bladeView;
+    private DialogUtil dialog;
     private List<Contant> contants;
+    private String[] strs = {"设置备注及标签"};
     private Map<String,Integer> contantMap = new HashMap<String,Integer>();
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,6 +51,8 @@ public class ContantFragment extends Fragment {
     }
 
     private void initView() {
+        dialog = new DialogUtil(strs,mContext);
+
         contants = new ArrayList<Contant>();
         contants.clear();
         contants = ContantsUtil.getContants();
@@ -58,22 +64,42 @@ public class ContantFragment extends Fragment {
         listview.setAdapter(adapter);
 
         list2Map();
+        setListener();
+
+
+    }
+
+    private void setListener() {
         bladeView.setOnItemClickListener(new BladeView.OnItemClickListener() {
             @Override
             public void onItemClick(String s) {
-                if(contantMap.containsKey(s)){
+                if (contantMap.containsKey(s)) {
                     int num = contantMap.get(s);
                     listview.setSelection(num);
                 }
-                if("↑".equals(s)){
+                if ("↑".equals(s)) {
                     listview.setSelection(0);
                 }
-                if("☆".equals(s)){
+                if ("☆".equals(s)) {
                     listview.setSelection(4);
                 }
             }
         });
 
+        listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                dialog.ShowDialog();
+                return false;
+            }
+        });
+
+        dialog.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                dialog.dialogDimiss();
+            }
+        });
 
     }
 

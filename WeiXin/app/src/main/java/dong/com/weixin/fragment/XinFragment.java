@@ -14,13 +14,15 @@ import android.widget.ListView;
 import dong.com.weixin.R;
 import dong.com.weixin.adapter.ConversitionAdapter;
 import dong.com.weixin.utils.DialogUtil;
+import dong.com.weixin.utils.LogUtils;
 
 public class XinFragment extends Fragment {
 
     private ListView conversition_listview;
     private ConversitionAdapter adapter;
     private Context mContext;
-
+    private DialogUtil dialog;
+    private String[] strs = {"标为未读","取消关注","删除该聊天"};
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -37,19 +39,26 @@ public class XinFragment extends Fragment {
         conversition_listview = (ListView) getActivity().findViewById(R.id.conversition_listview);
         adapter = new ConversitionAdapter(mContext);
         conversition_listview.setAdapter(adapter);
-
+        dialog = new DialogUtil(strs,mContext);
         setListener();
     }
 
     private void setListener() {
+
+
         conversition_listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String[] strs = {"我们好","你们好","他们好"};
-
-                DialogUtil dialog = new DialogUtil(strs);
-                dialog.ShowDialog(mContext);
+                dialog.ShowDialog();
                 return false;
+            }
+        });
+
+        dialog.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                LogUtils.i(i+"");
+                dialog.dialogDimiss();
             }
         });
     }

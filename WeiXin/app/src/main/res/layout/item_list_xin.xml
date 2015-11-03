@@ -55,10 +55,10 @@
             />
     </RelativeLayout>
 
-    <LinearLayout
+    <!--<LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="2px"
-        android:background="@color/contant_line"></LinearLayout>
+        android:background="@color/contant_line"></LinearLayout>-->
 
 </LinearLayout>
