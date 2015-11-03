@@ -1,0 +1,65 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dong.com.weixin.fragment.XinFragment"
+    android:background="@color/content_bg"
+    android:scrollbars="none">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_marginTop="15dp"
+        style="@style/style_mine_textview"
+        android:text="@string/pengyouquan"
+        android:drawableLeft="@mipmap/find_pengyouquan"/>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        style="@style/style_mine_textview"
+        android:text="@string/saoyisao"
+        android:drawableLeft="@mipmap/find_saoyisao"/>
+    <LinearLayout style="@style/line">
+        <TextView
+            android:background="@color/contant_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px" />
+    </LinearLayout>
+    <TextView
+        style="@style/style_mine_textview"
+        android:text="@string/yaoyiyao"
+        android:drawableLeft="@mipmap/find_yaoyiyao"/>
+    <TextView
+        android:layout_marginTop="15dp"
+        style="@style/style_mine_textview"
+        android:text="@string/fujin"
+        android:drawableLeft="@mipmap/find_fujin"/>
+    <LinearLayout style="@style/line">
+        <TextView
+            android:background="@color/contant_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px" />
+    </LinearLayout>
+    <TextView
+        style="@style/style_mine_textview"
+        android:text="@string/piaoliuping"
+        android:drawableLeft="@mipmap/find_piaoliuping"/>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        style="@style/style_mine_textview"
+        android:text="@string/gouwu"
+        android:drawableLeft="@mipmap/find_gouwu"/>
+    <LinearLayout style="@style/line">
+        <TextView
+            android:background="@color/contant_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px" />
+    </LinearLayout>
+    <TextView
+        style="@style/style_mine_textview"
+        android:text="@string/youxi"
+        android:drawableLeft="@mipmap/find_youxi"/>
+</LinearLayout>
+</ScrollView>

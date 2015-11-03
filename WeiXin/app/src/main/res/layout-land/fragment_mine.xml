@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dong.com.weixin.fragment.XinFragment"
+    android:orientation="vertical"
+    android:background="@color/content_bg">
+
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:background="@color/writer"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/mine_icon"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/con_icon"/>
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:id="@+id/mine_info"
+            android:layout_toRightOf="@id/mine_icon"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="冬哥"/>
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/mine_gray_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="微信号：123456789"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/mine_erweima"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        style="@style/style_mine_textview"
+        android:text="@string/mine_xiangce"
+        android:drawableLeft="@mipmap/mine_xiangce"/>
+
+    <LinearLayout style="@style/line">
+        <TextView
+            android:background="@color/contant_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px" />
+    </LinearLayout>
+
+    <TextView
+
+        style="@style/style_mine_textview"
+        android:text="@string/mine_shoucang"
+        android:drawableLeft="@mipmap/mine_shoucang"/>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        style="@style/style_mine_textview"
+        android:text="@string/mine_qianbao"
+        android:drawableLeft="@mipmap/mine_qianbao"/>
+    <LinearLayout style="@style/line">
+        <TextView
+            android:background="@color/contant_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px" />
+    </LinearLayout>
+    <TextView
+        style="@style/style_mine_textview"
+        android:text="@string/mine_kabao"
+        android:drawableLeft="@mipmap/mine_kabao"/>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        style="@style/style_mine_textview"
+        android:text="@string/mine_biaoqing"
+        android:drawableLeft="@mipmap/mine_biaoqing"/>
+    <TextView
+        android:layout_marginTop="15dp"
+        style="@style/style_mine_textview"
+        android:text="@string/mine_shezhi"
+        android:drawableLeft="@mipmap/mine_shezhi"/>
+
+
+</LinearLayout>

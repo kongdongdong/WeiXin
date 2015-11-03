@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:scaleType="fitXY"
+            android:id="@+id/mine_icon"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/con_icon"/>
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:id="@+id/mine_info"
+            android:layout_toRightOf="@id/mine_icon"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="冬哥"/>
+            <TextView
+                android:textSize="15sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/mine_gray_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你好，美女，今晚约吗？"/>
+        </LinearLayout>
+        <TextView
+            android:textColor="@color/mine_gray_text"
+            android:textSize="14sp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15:30"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/contant_line"></LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">微信</string>
+    <string name="contact">通讯录</string>
+    <string name="find">发现</string>
+    <string name="mine">我</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_base">BaseActivity</string>
+
+    <string name="pengyouquan">朋友圈</string>
+    <string name="saoyisao">扫一扫</string>
+    <string name="yaoyiyao">摇一摇</string>
+    <string name="fujin">附近的人</string>
+    <string name="piaoliuping">漂流瓶</string>
+    <string name="gouwu">购物</string>
+    <string name="youxi">游戏</string>
+
+    <string name="mine_xiangce">相册</string>
+    <string name="mine_shoucang">收藏</string>
+    <string name="mine_qianbao">钱包</string>
+    <string name="mine_kabao">卡包</string>
+    <string name="mine_biaoqing">表情</string>
+    <string name="mine_shezhi">设置</string>
+
+    <string name="menu_groupchat">群聊</string>
+    <string name="menu_addfriend">添加好友</string>
+    <string name="menu_qrcode">扫一扫</string>
+    <string name="menu_money">收钱</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+    <string name="country_area">国家/地区</string>
+    <string name="country_name">中国</string>
+    <string name="login_phone">你的手机号</string>
+    <string name="login_pwd">填写密码</string>
+    <string name="login">登录</string>
+    <string name="login_sms">用短信验证码登录</string>
+    <string name="login_error">登录遇到问题？</string>
+    <string name="login_other">使用其他方式登录</string>
+    <string name="login_type_phone">使用手机号登录</string>
+    <string name="login_86">+86</string>
+
+    <string name="regist_type_phone">注册</string>
+    <string name="regist_nicheng">昵称</string>
+    <string name="regist_pwd">密码</string>
+    <string name="regist_nicheng_hint">例如：陈晨</string>
+    <string name="regist_info">点击上面的“注册”按钮，即表示你同意<u>《腾讯微信软件许可及服务协议》</u></string>
+</resources>
